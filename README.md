@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/akhmadgibran/vistora-monolith/" target="_blank"><img src="/public/images/logo/vistora_logo_only_no_bg.png" width="100" alt="Vistora Logo"></a></p>
+<p align="center"><a href="https://github.com/akhmadgibran/vistora-monolith/" target="_blank"><img src="/public/images/logo/vistora_logo_no_bg.png" width="250" alt="Vistora Logo"></a></p>
 
 # Vistora Monolith
 
