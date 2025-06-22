@@ -1,61 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://github.com/akhmadgibran/vistora-monolith/" target="_blank"><img src="/public/images/logo/vistora_logo_only_no_bg.png" width="100" alt="Vistora Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Vistora Monolith
 
-## About Laravel
+**Vistora** is a Laravel-based monolithic eCommerce CMS project, designed as a showcase and learning platform for building modern fullstack applications with real-world features like authentication, content customization, and payment integration.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> ⚠️ This is the **monolith version** of Vistora. Future plans include splitting the project into REST API and decoupled frontend using Next.js.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Features
 
-## Learning Laravel
+- ✅ **Authentication** with Laravel Fortify (Register, Login, Logout)
+- 🧑‍💼 **Role-based access control** (Planned: Superadmin, Admin, Customer)
+- 🧾 **Product Management (CRUD)**
+- 🚚 **Order Management**
+- 🖼️ **Content Customization** (Homepage banner, store info, etc.)
+- 🛒 **Shopping Cart & Checkout** (Planned)
+- 💳 **Midtrans Payment Gateway** integration (Planned)
+- 📴 **Store Open/Close Toggle**
+- 📦 Clean code structure, RESTful routing, and UI with Tailwind CSS
+- 💡 Orther feature idea will be added here in the future
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🧱 Tech Stack Currently
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Layer     | Tools / Frameworks            |
+|-----------|-------------------------------|
+| Backend   | Laravel 12, Laravel Fortify   |
+| Frontend  | Blade, Tailwind CSS           |
+| Database  | MySQL                         |
+| Payment   | Midtrans Snap (Sandbox/Test)  |
+| Dev Tools | Git, GitHub, VSCode, Herd     |
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📦 Installation & Setup
 
-### Premium Partners
+```bash
+# 1. Clone the repository
+git clone https://github.com/akhmadgibran/vistora-monolith.git
+cd vistora-monolith
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+# 2. Install PHP dependencies
+composer install
 
-## Contributing
+# 3. Copy env file and generate app key
+cp .env.example .env
+php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 4. Create database and update DB credentials in .env
+php artisan migrate
 
-## Code of Conduct
+# 5. (Optional) Create storage symlink
+php artisan storage:link
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 6. Run the development server
+php artisan serve
+```
 
-## Security Vulnerabilities
+## 🌿 Branching Strategy
+This project follows the Git Flow branching strategy for code management..
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* `main`: Contains stable production-ready code. Only receives merges from `release` or `hotfix` branches.
+* `develop`: The main branch for development. All new features are integrated here.
+* `feature/*`:Created from `develop` for building new features (e.g., `feature/payment-report`). Merged back into `develop` once completed.
+* `release/*`: Created from `develop` to prepare for a release. Once ready, it's merged into both `main` and `develop`.
+* `hotfix/*`: Created from `main` for urgent bug fixes in production. Merged back into both `main` and `develop`.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![gitflow](https://github.com/user-attachments/assets/9ac5bea1-79af-4ad5-9d15-b9f316ed5fc6)
+
+
+
+## 🤝 Contributing
+This project is part of a personal learning journey and portfolio.
+Pull requests and feedback are welcome for educational collaboration.
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
+
+
