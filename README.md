@@ -5,6 +5,8 @@
 **Vistora** is a Laravel-based monolithic eCommerce CMS project, designed as a showcase and learning platform for building modern fullstack applications with real-world features like authentication, content customization, and payment integration.
 
 > ⚠️ This is the **monolith version** of Vistora. Future plans include splitting the project into REST API and decoupled frontend using Next.js.
+> 🚧 This project is actively in development. Expect frequent updates and unfinished features.
+
 
 ---
 
